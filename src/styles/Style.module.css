@@ -1,0 +1,41 @@
+.BoxStyle{    
+    display :"flex";
+    flex-direction : "column";
+    align-items : "center";
+    max-width: "800px";
+    margin: "auto";
+    margin-top: "10%";
+    border: "solid 0.5px";
+    border-radius: "5";
+    box-shadow: "5px 5px 7px  #ccc";
+    gap: "4px";
+ }
+
+
+@media print {
+    .myDivToPrint {
+        background-color: white;
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        margin: 0;
+        padding: 15px;
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
+
+.gridContainer {
+    position: relative;
+    display: grid;
+    grid-template-columns: 150px 20px 350px;
+    grid-template-rows: auto;
+  }
+  .item {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    
+  }
