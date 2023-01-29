@@ -1,13 +1,66 @@
+import { Card, CardContent, Grid } from "@mui/material";
 import React from "react";
+import { PrimaryButton, SecondaryButton } from "../Components/CustomButton";
 import {
-  Card,
-  CardContent,
-  Grid,
-  Box,
-  Typography,
-  Button,
-} from "@mui/material";
+  FullGridElement,
+  PrimaryTypographyGrid,
+  SecondaryTypographyGrid,
+  TitleTypography,
+} from "../Components/CustomGrid";
 
+export default function TotalFacilities() {
+
+  const originalPrint = window.print;
+  window.print = function() {
+    document.getElementById("Buttons").style.display = "none";
+    originalPrint();
+  };
+  const print = () => {
+    window.print();
+  };
+
+  return (
+    <div>
+          <TitleTypography text="DINA ANLÄGGNINGAR " />
+      <Card>
+        <CardContent>
+          <Grid
+            container
+            rowSpacing={0.5}
+            columnSpacing={{ xs: 12, sm: 4, md: 4 }}
+          >
+
+            
+
+            <PrimaryTypographyGrid text="Anläggningsadress" />
+            <SecondaryTypographyGrid text="abc" />
+
+            <PrimaryTypographyGrid text="Kortnummer" />
+            <SecondaryTypographyGrid text="abc" />
+
+            <PrimaryTypographyGrid text="Mätarställning" />
+            <SecondaryTypographyGrid text="abc" />
+          </Grid>
+        </CardContent>
+      </Card>
+      <div style={{margin:"5vh 0 "}} id="Buttons" >
+      <FullGridElement item>
+        <PrimaryButton fullWidth type="submit">
+          LOGGA UT
+        </PrimaryButton>
+      </FullGridElement>
+    <br/>
+      <FullGridElement item >
+        <SecondaryButton variant="outlined" fullWidth onClick={print}>
+          SKRIVA UT
+        </SecondaryButton>
+      </FullGridElement>
+      </div>
+    </div>
+  );
+}
+
+/*
 
 function TotalFacilities() {
   const bull = (
@@ -34,7 +87,7 @@ function TotalFacilities() {
         DINA ANLÄGNINGAR
       </Typography>
 
-      <Card style={{ width: "600px" }}>
+      <Card >
         <CardContent style={{margin:" 10px 20px"}} >
           <Grid container>
             
@@ -84,3 +137,4 @@ function TotalFacilities() {
 }
 
 export default TotalFacilities;
+ */

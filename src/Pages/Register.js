@@ -5,7 +5,7 @@ import Stack from "@mui/material/Stack";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
-import { PrimaryButton } from "../Components/CustomButton";
+import { PrimaryButton, SecondaryButton } from "../Components/CustomButton";
 import {
   FullGridElement,
   PrimaryTypographyGrid,
@@ -90,11 +90,11 @@ function Register() {
       <FullGridElement item>
         <PrimaryButton fullWidth>REGISTER</PrimaryButton>
       </FullGridElement>
-
+      <br/>
       <FullGridElement item>
-        <Button variant="outlined" fullWidth>
+        <SecondaryButton variant="outlined" fullWidth>
           SKRIVA UT
-        </Button>
+        </SecondaryButton>
       </FullGridElement>
     </Box>
   );
