@@ -31,7 +31,6 @@ function Login() {
     return <h1>Welcome! You are now authenticated.</h1>;
   }
 
-
   return (
     <Grid container rowSpacing={1} columnSpacing={{ xs: 4, sm: 4, md: 4 }}>
       <Typography textAlign="center" variant="h4" padding={3}>
