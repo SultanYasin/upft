@@ -1,4 +1,4 @@
-import {  Grid } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import React from "react";
 import { PrimaryButton, SecondaryButton } from "../Components/CustomButton";
 import {
@@ -10,13 +10,15 @@ import {
 } from "../Components/CustomGrid";
 
 export default function MultipleInvoice() {
-  const print = () => {
-    window.print();
+  const originalPrint = window.print;
+  window.print = function() {
+    document.getElementById("Buttons").style.display = "none";
+    originalPrint();
   };
 
   return (
     <div>
-      <Grid container rowSpacing={0.5} columnSpacing={{ xs: 12, sm: 4, md: 4 }}>
+      <Grid container rowSpacing={1} columnSpacing={{ xs: 12, sm: 4, md: 4 }}>
         <TitleTypography text="TACK FÖR DIN REGISTERING! " />
 
         <FullTypographyGrid text="Kvitto" />
@@ -66,19 +68,21 @@ export default function MultipleInvoice() {
 
         <PrimaryTypographyGrid text="Registreringsdatum" />
         <SecondaryTypographyGrid text="abc" />
+      </Grid>
 
+      <div style={{margin:"5vh 0 "}}  id="Buttons">
         <FullGridElement item>
           <PrimaryButton fullWidth type="submit">
             REGISTER
           </PrimaryButton>
         </FullGridElement>
-
+        <br/>
         <FullGridElement item>
-          <SecondaryButton variant="outlined" fullWidth onClick={print}>
+          <SecondaryButton variant="outlined" fullWidth onClick={() => window.print()}>
             SKRIVA UT
           </SecondaryButton>
         </FullGridElement>
-      </Grid>
+      </div>
     </div>
   );
 }

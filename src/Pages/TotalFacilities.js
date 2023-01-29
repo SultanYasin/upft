@@ -15,9 +15,6 @@ export default function TotalFacilities() {
     document.getElementById("Buttons").style.display = "none";
     originalPrint();
   };
-  const print = () => {
-    window.print();
-  };
 
   return (
     <div>
@@ -51,7 +48,7 @@ export default function TotalFacilities() {
       </FullGridElement>
     <br/>
       <FullGridElement item >
-        <SecondaryButton variant="outlined" fullWidth onClick={print}>
+        <SecondaryButton variant="outlined" fullWidth onClick={()=> window.print()}>
           SKRIVA UT
         </SecondaryButton>
       </FullGridElement>
