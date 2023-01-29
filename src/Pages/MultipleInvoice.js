@@ -2,8 +2,10 @@ import { Typography, Grid, Button } from "@mui/material";
 import React from "react";
 import { PrimaryButton, SecondaryButton } from "../Components/CostumeButton";
 import {
+  FullTypographyGrid,
   PrimaryTypographyGrid,
   SecondaryTypographyGrid,
+  TitleTypographyGrid,
 } from "../Components/CostumeGrid";
 
 export default function MultipleInvoice() {
@@ -14,13 +16,10 @@ export default function MultipleInvoice() {
   return (
     <div className="invoice">
       <Grid container rowSpacing={0.5} columnSpacing={{ xs: 12, sm: 4, md: 4 }}>
-        <Typography textAlign="center" variant="h4" pt={3} pb={3}>
-          TACK FÖR DIN REGISTERING!
-        </Typography>
+   
+        <TitleTypographyGrid text="TACK FÖR DIN REGISTERING!" />
 
-        <Grid item xs={12} sm={12} md={12} pb={2}>
-          Kvitto
-        </Grid>
+        <FullTypographyGrid text="Kvitto" />
 
         <PrimaryTypographyGrid text="Anläggningsadress" />
         <SecondaryTypographyGrid text="abc" />
@@ -46,8 +45,6 @@ export default function MultipleInvoice() {
         <Grid item xs={12} sm={12} md={12}>
           <hr style={{ margin: "20px  15px 20px 0px" }} />
         </Grid>
-
-      
 
         <PrimaryTypographyGrid text="Anläggningsadress" />
         <SecondaryTypographyGrid text="abc" />
