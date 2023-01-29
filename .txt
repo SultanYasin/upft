@@ -1,0 +1,122 @@
+ {/*   <Routes>
+
+         <Route path="/" element={<Login />}  />
+         <Route path="/register" element={<Register />  }  />
+         
+        
+      </Routes> */}
+
+
+
+
+
+
+/*   const costumeRouter = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path="/" element={<Root />}>
+        <Route index element={< Login />} />
+        <Route path="/component1" element={<Component1 />} />
+        <Route path="/component2" element={<Component2 />} />
+        <Route path="/header" element={<Header />} />
+        <Route path="/footer" element={<Footer />} />
+        <Route
+          path="/fetchdata"
+          element={<FetchedData />}
+          loader={dataLoader}
+        />
+      </Route>
+    )
+  );
+  
+  
+  
+
+
+const Root = () => {
+  return (
+    <>
+      <div>
+        <Link to="/">Login</Link>
+        <Link to="/register">register</Link>
+        <Link to="/invoice">facilities</Link>
+        <Link to="/step2">step2</Link>
+        <Link to="/invoices">multiple invoice</Link>
+        
+      </div>
+      <div>
+        <Outlet />
+      </div>
+    </>
+  );
+};
+
+
+  */
+ /*
+ in this case the id of the element that rendering in the url gonna be shown beside the Book word 
+ <Routes> <Route path="/books/:id" element={<Book />} /> </Routes>
+  const { id } = useParams() -> return <h1>Book {id}  </h1> */
+
+
+
+
+
+* 
+import Inloggning from "./Pages/Login";
+
+import MultipleInvoice from "./Pages/MultipleInvoice";
+import YourFacilities from "./Pages/TotalFacilities";
+import TotalFacilities from "./Pages/TotalFacilities";
+import Login from "./Pages/Login"; */
+
+/* <div style={{ display:"flex-box", width:"35%",   border: "3px solid green", padding:"5%" }}> */
+
+
+
+
+
+
+
+import "./App.css";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  Outlet,
+  Link,
+  RouterProvider,
+  Routes,
+} from "react-router-dom";
+import Login from "./Pages/Login";
+import Register from "./Pages/Register";
+import Step2 from "./Pages/Step2";
+import MultipleInvoice from "./Pages/MultipleInvoice";
+
+import { Grid } from "@material-ui/core";
+import { useTheme } from "@material-ui/core/styles";
+
+function App(props) {
+  const theme = useTheme();
+
+  const styles = {
+    root: {
+      display: "grid",
+      height: "100vh",
+      placeItems: "center",
+    
+      [theme.breakpoints.down("sm")]: {
+        padding: "40px",
+      },
+    },
+  };
+
+  return (
+    <Grid container spacing={1}>
+      <Grid item xs={12} sm={4} md={14} style={styles.root}>
+        <MultipleInvoice />
+      </Grid>
+    </Grid>
+  );
+}
+
+export default App;

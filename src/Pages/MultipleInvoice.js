@@ -14,9 +14,8 @@ export default function MultipleInvoice() {
     <Grid
       container
       rowSpacing={1}
-      columnSpacing={{ xs: 4, sm: 4, md: 4 }}
-      style={{ margin: "auto 10vw", maxWidth: "600px" }}
-    >
+      columnSpacing={{ xs: 12, sm: 4, md: 4 }}
+         >
       <Typography textAlign="center" variant="h4" padding={3}>
         TACK FÖR DIN REGISTERING!
       </Typography>
@@ -69,7 +68,7 @@ export default function MultipleInvoice() {
       </Grid>
 
       <Grid item xs={12} sm={12} md={12}>
-      <hr style={{ width: "80vw", margin: "40px 0 40px 0" }} />
+      <hr style={{ margin: "40px  20px" }} />
       </Grid>
 
 

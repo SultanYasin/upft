@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import { Button, Typography, Box, Grid } from "@mui/material";
 
-
-function Inloggning() {
+function Login() {
   const [input, setInput] = useState({
     username: "",
     password: "",
@@ -23,30 +22,19 @@ function Inloggning() {
 
   return (
     <Grid
-    container
-    rowSpacing={1}
-    columnSpacing={{ xs: 4, sm: 4, md: 4 }}
-    style={{ margin: "auto ", maxWidth: "600px" }}
-  >
-    <form onSubmit={handleSubmit}>
-      <Box
-        sx={{
-          marginTop: 8,
-          display: "flex",
-          flexDirection: "column",
-        }}
-      >
+      container
+      rowSpacing={1}
+      columnSpacing={{ xs: 4, sm: 4, md: 4 }}
+    >
+      <form onSubmit={handleSubmit}>
         <Typography textAlign="center" variant="h4" padding={3}>
           LOGGA IN TILL MÄTAREAVLÄSNING
         </Typography>
 
-        <Typography textAlign="center" variant="string" paddingTop={1}>
+        <Typography textAlign="center" variant="string" paddingTop={3}>
           Du hittar dina inlogningsuppgifter på din faktura
         </Typography>
-
-        <div
-          style={{ display: "flex", flexDirection: "column", width: "800px" }}
-        >
+        <Box mt={6} >
           <Typography variant="string" paddingTop={2} paddingRight={10}>
             Användarnamn
           </Typography>
@@ -75,8 +63,7 @@ function Inloggning() {
             fullWidth
             type={"password"}
           />
-        </div>
-
+        </Box>
         <Button
           fullWidth
           type="submit"
@@ -86,14 +73,13 @@ function Inloggning() {
           LOGGA IN
         </Button>
 
-        <Typography textAlign="center" variant="string" padding={3}>
+        <Typography textAlign="center" variant="string" paddingTop={3}>
           Denna sidan admminstreras av IDATA AB för ett antal företag och många
           svenska kommuner
         </Typography>
-      </Box>
-    </form>
+      </form>
     </Grid>
   );
 }
 
-export default Inloggning;
+export default Login;

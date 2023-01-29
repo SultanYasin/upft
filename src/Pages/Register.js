@@ -41,7 +41,7 @@ function Register() {
       container
       rowSpacing={1}
       columnSpacing={{ xs: 4, sm: 4, md: 4 }}
-      style={{ margin: "auto 10vw", maxWidth: "600px" }}
+      
     >
       <Typography textAlign="center" variant="h4" padding={3}>
         REGISTERA MÄTARSTÄLLNING

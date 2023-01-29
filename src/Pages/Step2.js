@@ -10,10 +10,7 @@ function AfterRegister() {
 
   return (
 
-    <Box className={styles.BoxStyle}     
-        
-    
-    >
+    <Box >
         <Typography textAlign="center" variant="h4" padding={3}>
           REGISTERA MÄTARSTÄLLNING
         </Typography>
