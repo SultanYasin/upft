@@ -14,7 +14,7 @@ export default function MultipleInvoice() {
   };
 
   return (
-    <div className="invoice">
+    <div >
       <Grid container rowSpacing={0.5} columnSpacing={{ xs: 12, sm: 4, md: 4 }}>
    
         <TitleTypographyGrid text="TACK FÖR DIN REGISTERING!" />
