@@ -1,6 +1,6 @@
 import { Typography, Box, Grid, Button } from "@mui/material";
 import React from "react";
-import { PrimaryButton, SecondaryButton } from "../Components/CostumeButton";
+import { PrimaryButton, SecondaryButton } from "../Components/CustomButton";
 
 function AfterRegister() {
   const print = () => {};

@@ -20,7 +20,6 @@ export const SecondaryTypographyGrid = ({ text }) => {
   };
 
 
-
 export const FullTypographyGrid = ({ text }) => {
     return (
       <Grid item xs={12} sm={12} md={12}>
@@ -28,11 +27,13 @@ export const FullTypographyGrid = ({ text }) => {
       </Grid>
     );
   };
-export const TitleTypographyGrid = ({ text }) => {
+export const TitleTypography = ({ text }) => {
     return (
-      <Grid item xs={12} sm={12} md={12}>
-        <Typography textAlign="center" variant="h4" pt={3} pb={3} >{ text }</Typography>
+      <Grid item xs={12} sm={12} md={12} style={{display:"flex", textAlign:"center",}}>
+        <Typography variant="h4" pt={5} pb={5}  >{ text  }</Typography>
       </Grid>
     );
   };
+
+  
 

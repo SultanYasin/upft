@@ -5,8 +5,11 @@ import Stack from "@mui/material/Stack";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
-import { PrimaryButton } from "../Components/CostumeButton";
-import { PrimaryTypographyGrid, SecondaryTypographyGrid } from "../Components/CostumeGrid";
+import { PrimaryButton } from "../Components/CustomButton";
+import {
+  PrimaryTypographyGrid,
+  SecondaryTypographyGrid,
+} from "../Components/CustomGrid";
 
 function Register() {
   const [input, setInput] = useState({
@@ -35,65 +38,57 @@ function Register() {
   };
 
   return (
-
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={1}>
-    <Typography textAlign="center" variant="h4" padding={3}>
-      REGISTERA MÄTARSTÄLLNING
-    </Typography>
+        <Typography textAlign="center" variant="h4" padding={3}>
+          REGISTERA MÄTARSTÄLLNING
+        </Typography>
 
-    <PrimaryTypographyGrid text = "Anläggningsadress" /> 
-    <SecondaryTypographyGrid text= "abc" />
+        <PrimaryTypographyGrid text="Anläggningsadress" />
+        <SecondaryTypographyGrid text="abc" />
 
-    <PrimaryTypographyGrid text = "Kortnummer" /> 
-    <SecondaryTypographyGrid text= "abc" />
+        <PrimaryTypographyGrid text="Kortnummer" />
+        <SecondaryTypographyGrid text="abc" />
 
-    <PrimaryTypographyGrid text = "Namn" /> 
-    <SecondaryTypographyGrid text= "abc" />
+        <PrimaryTypographyGrid text="Namn" />
+        <SecondaryTypographyGrid text="abc" />
 
-    <PrimaryTypographyGrid text = "Mätarnummer" /> 
-    <SecondaryTypographyGrid text= "abc" />
+        <PrimaryTypographyGrid text="Mätarnummer" />
+        <SecondaryTypographyGrid text="abc" />
 
+        <Grid item xs={7} sm={9} md={7} mt={5}>
+          <Typography variant="string">Mätarställning</Typography>
+          <TextField
+            name="mätarställning"
+            value={input.mätarställning}
+            onChange={handleChangeState}
+            autoFocus
+            variant="outlined"
+            margin="normal"
+            fullWidth
+            type={"text"}
+            placeholder="t ex 1234@abcd"
+          />
+        </Grid>
 
+        <Grid item xs={5} sm={3} md={5} mt={5}>
+          <Typography variant="string">Avläsningsdatum</Typography>
 
-      <Grid item xs={7} sm={9} md={7} mt={5}>
-        <Typography variant="string">Mätarställning</Typography>
-        <TextField
-          name="mätarställning"
-          value={input.mätarställning}
-          onChange={handleChangeState}
-          autoFocus
-          variant="outlined"
-          margin="normal"
-          fullWidth
-          type={"text"}
-          placeholder="t ex 1234@abcd"
-        />
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <Stack mt={2}>
+              <DesktopDatePicker
+                inputFormat="YYYY - MM - DD"
+                value={value}
+                onChange={handleChange}
+                renderInput={(params) => <TextField {...params} />}
+              />
+            </Stack>
+          </LocalizationProvider>
+        </Grid>
       </Grid>
 
-      <Grid item xs={5} sm={3} md={5} mt={5}>
-        <Typography variant="string">Avläsningsdatum</Typography>
-
-        <LocalizationProvider dateAdapter={AdapterDayjs}>
-          <Stack mt={2}>
-            <DesktopDatePicker
-              inputFormat="YYYY - MM - DD"
-              value={value}
-              onChange={handleChange}
-              renderInput={(params) => <TextField {...params} />}
-            />
-          </Stack>
-        </LocalizationProvider>
-      </Grid>
-      
-      </Grid>
-    
-    
-    <Grid item xs={12} sm={12} md={12}>
-        <PrimaryButton fullWidth
-        >
-          REGISTER
-        </PrimaryButton>
+      <Grid item xs={12} sm={12} md={12}>
+        <PrimaryButton fullWidth>REGISTER</PrimaryButton>
       </Grid>
 
       <Grid item xs={12} sm={12} md={12} pt={1}>
@@ -101,10 +96,7 @@ function Register() {
           SKRIVA UT
         </Button>
       </Grid>
-      </Box>
-  
-    
-    
+    </Box>
   );
 }
 
