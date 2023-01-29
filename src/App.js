@@ -17,11 +17,11 @@ function App(props) {
       container
       rowSpacing={1}
       p={2}
-      columnSpacing={{ xs: 12, sm: 12, md: 4 }}
-      style={{ display: "grid", height: "100vh", placeItems: "center" , }}
+      
+      style={{ display: "grid", height: "100vh", placeItems: "center",   }}
     >
-      <Grid item xs={12} sm={8} md={4} >
-        <Login />
+      <Grid item xs={12} sm={8} md={6} >
+        <MultipleInvoice />
       </Grid>
     </Grid>
   );

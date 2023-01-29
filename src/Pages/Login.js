@@ -1,10 +1,15 @@
 import { Button, Grid, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { PrimaryButton } from "../Components/CostumeButton";
 
 function Login() {
+
+
+   const [authenticated, setAuthenticated] = useState(false);
   const [input, setInput] = useState({
-    username: "",
-    password: "",
+    username: '',
+    password: '',
   });
 
   const handleChangeState = (event) => {
@@ -16,8 +21,20 @@ function Login() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(input);
+    if (input.username === 'Idata' && input.password === '123') {
+      setAuthenticated(true);
+    } else {
+      alert('Incorrect username or password');
+    }
   };
+
+  if (authenticated) {
+    return <h1>Welcome! You are now authenticated.</h1>;
+  }
+
+  if (authenticated) {
+    return <h1>Welcome! You are now authenticated.</h1>;
+  }
 
   return (
     <Grid container rowSpacing={1} columnSpacing={{ xs: 4, sm: 4, md: 4 }}>
@@ -63,14 +80,9 @@ function Login() {
             type={"password"}
           />
 
-          <Button
-            fullWidth
-            type="submit"
-            variant="contained"
-            sx={{ mt: 3, mb: 2 }}
-          >
+          <PrimaryButton fullWidth >
             LOGGA IN
-          </Button>
+          </PrimaryButton>
         </form>
         <Typography textAlign="center" variant="string" paddingTop={3}>
           Denna sidan admminstreras av IDATA AB för ett antal företag och många
