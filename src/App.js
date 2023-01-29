@@ -16,7 +16,7 @@ function App(props) {
     <Grid container rowSpacing={1} p={2}
       style={{ display: "grid", height: "100vh", placeItems: "center" }}>
       <Grid item xs={12} sm={8} md={6} >
-        <MultipleInvoice />
+        <Login />
       </Grid>
     </Grid>
   );

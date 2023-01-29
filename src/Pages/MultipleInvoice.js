@@ -2,6 +2,7 @@ import { Typography, Grid, Button } from "@mui/material";
 import React from "react";
 import { PrimaryButton, SecondaryButton } from "../Components/CustomButton";
 import {
+  FullGridElement,
   FullTypographyGrid,
   PrimaryTypographyGrid,
   SecondaryTypographyGrid,
@@ -66,17 +67,17 @@ export default function MultipleInvoice() {
         <PrimaryTypographyGrid text="Registreringsdatum" />
         <SecondaryTypographyGrid text="abc" />
 
-        <Grid item xs={12} sm={12} md={12} mt={4}>
+        <FullGridElement item>
           <PrimaryButton fullWidth type="submit">
             REGISTER
           </PrimaryButton>
-        </Grid>
+        </FullGridElement>
 
-        <Grid item xs={12} sm={12} md={12} pt={1}>
+        <FullGridElement item>
           <SecondaryButton variant="outlined" fullWidth onClick={print}>
             SKRIVA UT
           </SecondaryButton>
-        </Grid>
+        </FullGridElement>
       </Grid>
     </div>
   );
