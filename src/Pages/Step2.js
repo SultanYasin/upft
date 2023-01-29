@@ -1,6 +1,6 @@
 import { Typography,Box, Grid,Button } from "@mui/material";
 import React from "react";
-import styles from "../styles/Style.module.css";
+
 
 function AfterRegister() {
 

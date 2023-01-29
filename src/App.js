@@ -1,12 +1,5 @@
 import "./App.css";
-import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  Route,
-  Outlet,
-  Link,
-  RouterProvider,
-  Routes,
+import { createBrowserRouter, createRoutesFromElements, Route, Outlet, Link, RouterProvider, Routes,
 } from "react-router-dom";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
@@ -24,11 +17,11 @@ function App(props) {
       container
       rowSpacing={1}
       p={2}
-      columnSpacing={{ xs: 4, sm: 12, md: 4 }}
-      style={{ display: "grid", height: "100vh", placeItems: "center" }}
+      columnSpacing={{ xs: 12, sm: 12, md: 4 }}
+      style={{ display: "grid", height: "100vh", placeItems: "center" , }}
     >
-      <Grid item xs={"auto"} sm={8} md={4}  >
-        <MultipleInvoice />
+      <Grid item xs={12} sm={8} md={4} >
+        <Login />
       </Grid>
     </Grid>
   );

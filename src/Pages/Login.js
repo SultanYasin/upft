@@ -1,6 +1,5 @@
+import { Button, Grid, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
-import TextField from "@mui/material/TextField";
-import { Button, Typography, Box, Grid } from "@mui/material";
 
 function Login() {
   const [input, setInput] = useState({
@@ -21,23 +20,23 @@ function Login() {
   };
 
   return (
-    <Grid
-      container
-      rowSpacing={1}
-      
-    >
-      <form onSubmit={handleSubmit}>
-        <Typography textAlign="center" variant="h4" padding={3}>
-          LOGGA IN TILL MÄTAREAVLÄSNING
-        </Typography>
+    <Grid container rowSpacing={1} columnSpacing={{ xs: 4, sm: 4, md: 4 }}>
+      <Typography textAlign="center" variant="h4" padding={3}>
+        LOGGA IN TILL MÄTAREAVLÄSNING
+      </Typography>
 
-        <Typography textAlign="center" variant="string" paddingTop={3}>
+      <Grid item xs={12} sm={12} md={12} paddingTop={3} paddingBottom={3}>
+        <Typography textAlign="center" variant="string">
           Du hittar dina inlogningsuppgifter på din faktura
         </Typography>
-        <Box mt={6} >
-          <Typography variant="string" paddingTop={2} paddingRight={10}>
+      </Grid>
+
+      <Grid item mt={2}>
+        <form onSubmit={handleSubmit}>
+          <Typography variant="string" paddingTop={2}>
             Användarnamn
           </Typography>
+
           <TextField
             name="username"
             value={input.username}
@@ -49,7 +48,7 @@ function Login() {
             type={"text"}
           />
 
-          <Typography variant="string" paddingTop={2} paddingRight={10}>
+          <Typography variant="string" paddingTop={2}>
             Lösenord
           </Typography>
 
@@ -63,23 +62,137 @@ function Login() {
             fullWidth
             type={"password"}
           />
-        </Box>
-        <Button
-          fullWidth
-          type="submit"
-          variant="contained"
-          sx={{ mt: 3, mb: 2 }}
-        >
-          LOGGA IN
-        </Button>
 
+          <Button
+            fullWidth
+            type="submit"
+            variant="contained"
+            sx={{ mt: 3, mb: 2 }}
+          >
+            LOGGA IN
+          </Button>
+        </form>
         <Typography textAlign="center" variant="string" paddingTop={3}>
           Denna sidan admminstreras av IDATA AB för ett antal företag och många
           svenska kommuner
         </Typography>
-      </form>
+      </Grid>
     </Grid>
   );
 }
 
 export default Login;
+
+/* 
+  <Grid container spacing={1} alignItems="start">
+            <Grid item xs={8}>
+              <Typography>name</Typography>
+              <TextField
+                onChange={handleChangeState}
+                name="name"
+                type={"text"}
+                value={input.name}
+                variant="outlined"
+                placeholder="Name :"
+                fullWidth
+                margin="normal"
+              />
+            </Grid>
+
+            <Grid item xs={4}>
+            <RegisterInputs />
+             
+            </Grid>
+          </Grid>
+
+
+
+ <Box
+      sx={{
+        marginTop: 8,
+        display: "flex",
+        flexDirection: "column",
+        maxWidth: "800px",
+      }}
+    >
+      <form onSubmit={handleSubmit}>
+        <Typography textAlign="center" variant="h4" padding={3}>
+          REGISTERA MÄTAREAVLÄSNING
+        </Typography>
+
+        <TextContainer />
+        
+        <RegisterInputs />
+
+
+      </form>
+    </Box>
+
+    -----------------------------------------------
+      <form onSubmit={handleSubmit}>
+      <Box className={styles.BoxStyle}>
+        <Typography textAlign="center" variant="h4" padding={3}>
+          REGISTERA MÄTARSTÄLLNING
+        </Typography>
+
+        <Box sx={{ width: '100%',  }}>
+
+        <Grid item xs={12} pb={4} >Kvitto</Grid>
+        
+      <Grid container columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+
+
+        <Grid item xs={6}>
+          <Typography>Anläggningsadress</Typography>
+        </Grid>
+
+        <Grid item xs={6}>
+          <Typography>2</Typography>
+        </Grid>
+
+        <Grid item xs={6}>
+          <Typography>Kortnummer</Typography>
+        </Grid>
+
+        <Grid item xs={6}>
+          <Typography>4</Typography>
+        </Grid>
+
+        <Grid item xs={6}>
+          <Typography>Namn</Typography>
+        </Grid>
+
+        <Grid item xs={6}>
+          <Typography>6</Typography>
+        </Grid>
+
+        <Grid item xs={6} pb={6} >
+          <Typography>MätarNummer</Typography>
+        </Grid>
+
+
+      </Grid>
+    </Box>
+
+        <Box mt={5} sx={{ flexGrow: 1}}>
+        <RegisterInputs />
+        </Box>
+
+        <Button
+          type="submit"
+          sx={{ mt: 3, mb: 2 }}
+          fullWidth
+          variant="contained"
+        >
+          REGISTERA
+        </Button>
+        <br />
+        <Button onClick={handleResetState} variant="outlined" fullWidth>
+          AVBRYT
+        </Button>
+
+      
+        
+      </Box>
+    </form>
+*/

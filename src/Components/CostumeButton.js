@@ -1,41 +1,12 @@
-import { Button } from '@mui/material'
-import React from "react";
-import { createMuiTheme } from "@material-ui/core/styles";
-import { ThemeProvider } from "@material-ui/styles";
+import React from 'react';
+import styled from 'styled-components';
 
+const PrimaryButton = styled.button`
+  background-color: blue;
+  color: white;
+  font-size: 18px;
+  padding: 10px 15px;
+  cursor: pointer;
+`;
 
-
-function CostumeButton() {
-
-
-  const theme = createMuiTheme({
-    palette: {
-      primary: {
-        main: "#00364c",
-        color:'#fff',
-        variant:"contained"
-      },
-      secondary: {
-        main: "#fff",
-        color:'#00364c',
-        borderRadius:'2px',
-        variant:"outlined"
-      }
-    }
-  });
-
-  return (
-    <ThemeProvider theme={theme}>
-      <div>
-        <Button variant="contained" color="primary">
-          REGESTERA
-        </Button>
-        <Button variant="contained" color="secondary">
-          AVBRYT
-        </Button>
-      </div>
-    </ThemeProvider>
-  );
-}
-
-export default CostumeButton
+export default CustomButton;
