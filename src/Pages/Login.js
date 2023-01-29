@@ -24,7 +24,7 @@ function Login() {
     <Grid
       container
       rowSpacing={1}
-      columnSpacing={{ xs: 4, sm: 4, md: 4 }}
+      
     >
       <form onSubmit={handleSubmit}>
         <Typography textAlign="center" variant="h4" padding={3}>

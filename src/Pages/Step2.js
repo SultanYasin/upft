@@ -10,15 +10,15 @@ function AfterRegister() {
 
   return (
 
-    <Box >
+    <Grid p={2} >
         <Typography textAlign="center" variant="h4" padding={3}>
           REGISTERA MÄTARSTÄLLNING
         </Typography>
 
-        <Box sx={{ width: '100%',  }}>
+        <Box >
 
         <Grid item xs={12} pb={4} >Kvitto</Grid>
-      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+      <Grid container rowSpacing={1} columnSpacing={{ xs: 4, sm: 2, md: 3 }}  >
 
 
         <Grid item xs={6}>
@@ -92,7 +92,7 @@ function AfterRegister() {
 
       </Grid>
     </Box>
-  </Box>
+  </Grid>
 
     
   );

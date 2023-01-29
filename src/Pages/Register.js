@@ -41,6 +41,7 @@ function Register() {
       container
       rowSpacing={1}
       columnSpacing={{ xs: 4, sm: 4, md: 4 }}
+      p={2}
       
     >
       <Typography textAlign="center" variant="h4" padding={3}>
