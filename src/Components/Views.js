@@ -18,14 +18,15 @@ function Views() {
     <div>
       <Routes>
         
-        <Route path="/" element={<Login />}>
-          <Route index element={<Login />} />
-          <Route path = "rRegister" element={<Register />} />
+        <Route path="/" element={<Login />} />
+          
+          <Route path = "register" element={<Register />} />
           <Route path="/list" element={<FacilitiesList />} />
           <Route path="/receipt" element={<Receipts />} />
-
-        </Route>
+         
+     
       </Routes>
+          <Outlet />
       
     </div>
   );

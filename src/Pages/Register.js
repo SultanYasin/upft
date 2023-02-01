@@ -1,4 +1,4 @@
-import {  Grid, TextField, Typography, Box } from "@mui/material";
+import { Grid, TextField, Typography, Box } from "@mui/material";
 import React, { useState } from "react";
 import dayjs from "dayjs";
 import Stack from "@mui/material/Stack";
@@ -9,20 +9,17 @@ import { PrimaryButton, SecondaryButton } from "../Components/CustomButton";
 import { useNavigate } from "react-router-dom";
 import {
   FullGridElement,
+  PrimaryTextField,
   PrimaryTypographyGrid,
-  SecondaryTypographyGrid,
   TitleTypography,
 } from "../Components/CustomGrid";
-
+import { useRecoilState } from "recoil";
+import { globalState } from "../Components/RecoilState/GlobalState";
 
 function Register() {
 
-  const navigate = useNavigate();
-
   const [value, setValue] = useState(dayjs("2023-01-01"));
-  const [input, setInput] = useState({
-    username: "",
-  });
+  const [input, setInput] = useRecoilState(globalState);
 
   const handleChangeState = (event) => {
     setInput((prevState) => ({
@@ -36,65 +33,115 @@ function Register() {
     console.log(input);
   };
 
+  
+  const navigate = useNavigate();
+  const redirect = () => navigate("/receipt")
+
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <Grid container  rowSpacing={2} columnSpacing={{ xs: 12, sm: 4, md: 4 }}>
-      <TitleTypography text="REGISTERA MÄTARSTÄLLNING " />
-
-        <PrimaryTypographyGrid text="Anläggningsadress" />
-        <SecondaryTypographyGrid text="abc" />
-
-        <PrimaryTypographyGrid text="Kortnummer" />
-        <SecondaryTypographyGrid text="abc" />
-
-        <PrimaryTypographyGrid text="Namn" />
-        <SecondaryTypographyGrid text="abc" />
-
-        <PrimaryTypographyGrid text="Mätarnummer" />
-        <SecondaryTypographyGrid text="abc" />
-
-        <Grid item xs={7} sm={9} md={7} mt={5}>
-          <Typography variant="string">Mätarställning</Typography>
-          <TextField
-            name="mätarställning"
-            value={input.mätarställning}
+      <form onSubmit={handleSubmit} >
+        <Grid container rowSpacing={2} columnSpacing={{ xs: 12, sm: 4, md: 4 }}>
+          <TitleTypography text="REGISTERA MÄTARSTÄLLNING " />
+          <PrimaryTypographyGrid text="Anläggningsadress" />
+          <PrimaryTextField
+            name="facilityAddress"
+            value={input.facilityAddress}
             onChange={handleChangeState}
             autoFocus
             variant="outlined"
             margin="normal"
-            fullWidth
             type={"text"}
-            placeholder="t ex 1234@abcd"
+            text="abc"
           />
+
+          <PrimaryTypographyGrid text="Kortnummer" />
+          <PrimaryTextField
+            name="cardNumber"
+            value={input.cardNumber}
+            onChange={handleChangeState}
+            autoFocus
+            variant="outlined"
+            margin="normal"
+            type={"text"}
+            text="abc"
+          />
+
+          <PrimaryTypographyGrid text="Namn" />
+          <PrimaryTextField
+            name="name"
+            value={input.name}
+            onChange={handleChangeState}
+            autoFocus
+            variant="outlined"
+            margin="normal"
+            type={"text"}
+            text="abc"
+          />
+
+          <PrimaryTypographyGrid text="Mätarnummer" />
+          <PrimaryTextField
+            name="meterNumber"
+            value={input.meterNumber}
+            onChange={handleChangeState}
+            autoFocus
+            variant="outlined"
+            margin="normal"
+            type={"text"}
+            text="abc"
+          />
+
+          <Grid item xs={7} sm={9} md={7} mt={5}>
+            <Typography variant="string">Mätarställning</Typography>
+            <TextField
+              name="meterSetting"
+              value={input.meterSetting}
+              onChange={handleChangeState}
+              autoFocus
+              variant="outlined"
+              margin="normal"
+              type={"text"}
+              fullWidth
+              placeholder="t ex 1234@abcd"
+            />
+          </Grid>
+
+          <Grid item xs={5} sm={3} md={5} mt={5}>
+            <Typography variant="string">Avläsningsdatum</Typography>
+
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <Stack mt={2}>
+                <DesktopDatePicker
+                  inputFormat="YYYY - MM - DD"
+                  value={input.readingDate}
+                  onChange={handleChangeState}
+                  renderInput={(params) => <TextField {...params} />}
+                />
+              </Stack>
+            </LocalizationProvider>
+          </Grid>
         </Grid>
 
-        <Grid item xs={5} sm={3} md={5} mt={5}>
-          <Typography variant="string">Avläsningsdatum</Typography>
-
-          <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <Stack mt={2}>
-              <DesktopDatePicker
-                inputFormat="YYYY - MM - DD"
-                value={value}
-                onChange={handleChange}
-                renderInput={(params) => <TextField {...params} />}
-              />
-            </Stack>
-          </LocalizationProvider>
-        </Grid>
-      </Grid>
-
-      <FullGridElement item>
-        <PrimaryButton fullWidth>REGISTER</PrimaryButton>
-      </FullGridElement>
-      <br/>
-      <FullGridElement item>
-        <SecondaryButton variant="outlined" fullWidth>
-          SKRIVA UT
-        </SecondaryButton>
-      </FullGridElement>
+        <FullGridElement item>
+          <PrimaryButton fullWidth type="submit" onClick={handleSubmit}  >REGISTER</PrimaryButton>
+        </FullGridElement>
+        <br />
+        <FullGridElement item>
+          <SecondaryButton variant="outlined" fullWidth onClick={redirect} >
+            SKRIVA UT
+          </SecondaryButton>
+        </FullGridElement>
+      </form>
     </Box>
   );
 }
 
 export default Register;
+
+/*   const [input, setInput] = useRecoilState({
+    facilityAddress: "",
+    cardNumber: "",
+    name: "",
+    meterNumber: "",
+    readingDate: "",
+    meterSetting:"",
+  }); */

@@ -1,10 +1,11 @@
 import React, { Children } from "react";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
+import { TextField } from "@mui/material";
 
 export const PrimaryTypographyGrid = ({ text }) => {
   return (
-    <Grid item xs={8} sm={8} md={9}>
+    <Grid item xs={8} sm={8} md={7}>
       <Typography>{text}</Typography>
     </Grid>
   );
@@ -17,6 +18,15 @@ export const SecondaryTypographyGrid = ({ text }) => {
     </Grid>
   );
 };
+
+export const PrimaryTextField = ({ text }) => {
+  return (
+    <Grid item xs={8} sm={8} md={5}>
+      <TextField>{text}</TextField>
+    </Grid>
+  );
+};
+
 
 export const FullTypographyGrid = ({ text }) => {
   return (

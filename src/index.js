@@ -3,16 +3,15 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
-import store from "./Components/redux/store";
-import { Provider } from "react-redux";
+import { RecoilRoot } from "recoil";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <Provider store={store} >
+  <RecoilRoot>
+    <React.StrictMode>
       <BrowserRouter>
         <App />
       </BrowserRouter>
-    </Provider>
-  </React.StrictMode>
+    </React.StrictMode>
+  </RecoilRoot>
 );

@@ -1,13 +1,9 @@
 import { Box, Grid } from "@mui/material";
 import React from "react";
+import { useRecoilValue } from "recoil";
 import { PrimaryButton, SecondaryButton } from "../Components/CustomButton";
-import {
-  FullGridElement,
-  FullTypographyGrid,
-  PrimaryTypographyGrid,
-  SecondaryTypographyGrid,
-  TitleTypography,
-} from "../Components/CustomGrid";
+import { FullGridElement, FullTypographyGrid, PrimaryTextField, PrimaryTypographyGrid, TitleTypography,} from "../Components/CustomGrid";
+import { globalState } from "../Components/RecoilState/GlobalState";
 
 export default function MultipleInvoice() {
   const originalPrint = window.print;
@@ -16,6 +12,8 @@ export default function MultipleInvoice() {
     originalPrint();
   };
 
+  const inputValue = useRecoilValue(globalState);
+
   return (
     <div>
       <Grid container rowSpacing={1} columnSpacing={{ xs: 12, sm: 4, md: 4 }}>
@@ -23,51 +21,51 @@ export default function MultipleInvoice() {
 
         <FullTypographyGrid text="Kvitto" />
 
+
         <PrimaryTypographyGrid text="Anläggningsadress" />
-        <SecondaryTypographyGrid text="abc" />
+        <PrimaryTextField text={inputValue.facilityAddress} />
 
         <PrimaryTypographyGrid text="Kortnummer" />
-        <SecondaryTypographyGrid text="abc" />
+        <PrimaryTextField text={inputValue.cardNumber} />
 
         <PrimaryTypographyGrid text="Namn" />
-        <SecondaryTypographyGrid text="abc" />
+        <PrimaryTextField text={inputValue.name} />
 
         <PrimaryTypographyGrid text="Mätarnummer" />
-        <SecondaryTypographyGrid text="abc" />
+        <PrimaryTextField text={inputValue.meterNumber} />
 
         <PrimaryTypographyGrid text="Mätarställning" />
-        <SecondaryTypographyGrid text="abc" />
+        <PrimaryTextField text={inputValue.meterSetting} />
 
         <PrimaryTypographyGrid text="Avläsningsdatum" />
-        <SecondaryTypographyGrid text="abc" />
+        <PrimaryTextField text={inputValue.readingDate} />
 
         <PrimaryTypographyGrid text="Registreringsdatum" />
-        <SecondaryTypographyGrid text="abc" />
-
+        <PrimaryTextField text={inputValue.registerDate} />
         <Grid item xs={12} sm={12} md={12}>
           <hr style={{ margin: "20px  15px 20px 0px" }} />
         </Grid>
 
         <PrimaryTypographyGrid text="Anläggningsadress" />
-        <SecondaryTypographyGrid text="abc" />
+        <PrimaryTextField text="abc" />
 
         <PrimaryTypographyGrid text="Kortnummer" />
-        <SecondaryTypographyGrid text="abc" />
+        <PrimaryTextField text="abc" />
 
         <PrimaryTypographyGrid text="Namn" />
-        <SecondaryTypographyGrid text="abc" />
+        <PrimaryTextField text="abc" />
 
         <PrimaryTypographyGrid text="Mätarnummer" />
-        <SecondaryTypographyGrid text="abc" />
+        <PrimaryTextField text="abc" />
 
         <PrimaryTypographyGrid text="Mätarställning" />
-        <SecondaryTypographyGrid text="abc" />
+        <PrimaryTextField text="abc" />
 
         <PrimaryTypographyGrid text="Avläsningsdatum" />
-        <SecondaryTypographyGrid text="abc" />
+        <PrimaryTextField text="abc" />
 
         <PrimaryTypographyGrid text="Registreringsdatum" />
-        <SecondaryTypographyGrid text="abc" />
+        <PrimaryTextField text="abc" />
       </Grid>
 
       <div style={{margin:"5vh 0 "}}  id="Buttons">

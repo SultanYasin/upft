@@ -17,8 +17,10 @@ export default function FacilitiesList() {
     originalPrint();
   };
 
+  const redirect =() =>  navigate("/register")
+
   return (
-    <div>
+    <div onClick={redirect} >
       <TitleTypography text="DINA ANLÄGGNINGAR " />
       <Card>
         <CardContent>
