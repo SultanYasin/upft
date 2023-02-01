@@ -7,8 +7,10 @@ import {
   SecondaryTypographyGrid,
   TitleTypography,
 } from "../Components/CustomGrid";
+import { useNavigate } from "react-router-dom";
+export default function FacilitiesList() {
 
-export default function TotalFacilities() {
+  const navigate = useNavigate();
   const originalPrint = window.print;
   window.print = function () {
     document.getElementById("Buttons").style.display = "none";

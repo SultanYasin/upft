@@ -5,6 +5,9 @@ import { PrimaryButton } from "../Components/CustomButton";
 import { FullGridElement } from "../Components/CustomGrid";
 
 function Login() {
+
+  const navigate = useNavigate();
+
   const [authenticated, setAuthenticated] = useState(false);
   const [input, setInput] = useState({
     username: "",
@@ -22,14 +25,13 @@ function Login() {
     event.preventDefault();
     if (input.username === "Idata" && input.password === "123") {
       setAuthenticated(true);
+      navigate("/list")
     } else {
       alert("Incorrect username or password");
     }
   };
 
-  if (authenticated) {
-    return <h1>Welcome! You are now authenticated.</h1>;
-  }
+
 
   return (
     <Grid container rowSpacing={1} columnSpacing={{ xs: 4, sm: 4, md: 4 }}>
