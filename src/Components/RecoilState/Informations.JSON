@@ -1,0 +1,9 @@
+{
+  "meter": {
+    "readingDate": "2020-01-01",
+    "registeringDate": "2019-12-01",
+    "username": "test",
+    "cardNumber": "0123456789",
+    "meterNumber": "987654"
+  }
+}
