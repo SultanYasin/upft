@@ -1,18 +1,17 @@
-import { Box, Grid } from "@mui/material";
+import { Grid } from "@mui/material";
 import React from "react";
-import { useRecoilValue } from "recoil";
+
 import { PrimaryButton, SecondaryButton } from "../Components/CustomButton";
 import { FullGridElement, FullTypographyGrid, PrimaryTextField, PrimaryTypographyGrid, TitleTypography,} from "../Components/CustomGrid";
-import { globalState } from "../Components/RecoilState/GlobalState";
+
 
 export default function MultipleInvoice() {
   const originalPrint = window.print;
   window.print = function() {
     document.getElementById("Buttons").style.display = "none";
     originalPrint();
+    document.getElementById("Buttons").style.display = "block";
   };
-
-  const inputValue = useRecoilValue(globalState);
 
   return (
     <div>
@@ -23,25 +22,25 @@ export default function MultipleInvoice() {
 
 
         <PrimaryTypographyGrid text="Anläggningsadress" />
-        <PrimaryTextField text={inputValue.facilityAddress} />
+        <PrimaryTextField text={"facilityAddress"} />
 
         <PrimaryTypographyGrid text="Kortnummer" />
-        <PrimaryTextField text={inputValue.cardNumber} />
+        <PrimaryTextField text={"cardNumber"} />
 
         <PrimaryTypographyGrid text="Namn" />
-        <PrimaryTextField text={inputValue.name} />
+        <PrimaryTextField text={"name"} />
 
         <PrimaryTypographyGrid text="Mätarnummer" />
-        <PrimaryTextField text={inputValue.meterNumber} />
+        <PrimaryTextField text={"meterNumber"} />
 
         <PrimaryTypographyGrid text="Mätarställning" />
-        <PrimaryTextField text={inputValue.meterSetting} />
+        <PrimaryTextField text={"meterSetting"} />
 
         <PrimaryTypographyGrid text="Avläsningsdatum" />
-        <PrimaryTextField text={inputValue.readingDate} />
+        <PrimaryTextField text={"readingDate"} />
 
         <PrimaryTypographyGrid text="Registreringsdatum" />
-        <PrimaryTextField text={inputValue.registerDate} />
+        <PrimaryTextField text={"registerDate"} />
         <Grid item xs={12} sm={12} md={12}>
           <hr style={{ margin: "20px  15px 20px 0px" }} />
         </Grid>

@@ -14,12 +14,13 @@ import {
   TitleTypography,
 } from "../Components/CustomGrid";
 import { useRecoilState } from "recoil";
-import { globalState } from "../Components/RecoilState/GlobalState";
+
 
 function Register() {
 
   const [value, setValue] = useState(dayjs("2023-01-01"));
-  const [input, setInput] = useRecoilState(globalState);
+  const [input, setInput] = useState("");
+  
 
   const handleChangeState = (event) => {
     setInput((prevState) => ({
@@ -45,7 +46,7 @@ function Register() {
           <PrimaryTypographyGrid text="Anläggningsadress" />
           <PrimaryTextField
             name="facilityAddress"
-            value={input.facilityAddress}
+            value={"facilityAddress"}
             onChange={handleChangeState}
             autoFocus
             variant="outlined"
@@ -57,7 +58,7 @@ function Register() {
           <PrimaryTypographyGrid text="Kortnummer" />
           <PrimaryTextField
             name="cardNumber"
-            value={input.cardNumber}
+            value={"cardNumber"}
             onChange={handleChangeState}
             autoFocus
             variant="outlined"
@@ -69,7 +70,7 @@ function Register() {
           <PrimaryTypographyGrid text="Namn" />
           <PrimaryTextField
             name="name"
-            value={input.name}
+            value={"name"}
             onChange={handleChangeState}
             autoFocus
             variant="outlined"
@@ -81,7 +82,7 @@ function Register() {
           <PrimaryTypographyGrid text="Mätarnummer" />
           <PrimaryTextField
             name="meterNumber"
-            value={input.meterNumber}
+            value={"meterNumber"}
             onChange={handleChangeState}
             autoFocus
             variant="outlined"
@@ -94,7 +95,7 @@ function Register() {
             <Typography variant="string">Mätarställning</Typography>
             <TextField
               name="meterSetting"
-              value={input.meterSetting}
+              value={"meterSetting"}
               onChange={handleChangeState}
               autoFocus
               variant="outlined"
@@ -112,7 +113,7 @@ function Register() {
               <Stack mt={2}>
                 <DesktopDatePicker
                   inputFormat="YYYY - MM - DD"
-                  value={input.readingDate}
+                  value={"readingDate"}
                   onChange={handleChangeState}
                   renderInput={(params) => <TextField {...params} />}
                 />
