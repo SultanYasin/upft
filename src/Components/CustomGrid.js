@@ -27,7 +27,6 @@ export const PrimaryTextField = ({ text }) => {
   );
 };
 
-
 export const FullTypographyGrid = ({ text }) => {
   return (
     <Grid item xs={12} sm={12} md={12}>
@@ -36,7 +35,7 @@ export const FullTypographyGrid = ({ text }) => {
   );
 };
 export const FullGridElement = ({ children, xs, sm, md, pt }) => (
-  <Grid item xs={12} sm={12} md={12} >
+  <Grid item xs={12} sm={12} md={12}>
     {children}
   </Grid>
 );
@@ -48,11 +47,19 @@ export const TitleTypography = ({ text }) => {
       xs={12}
       sm={12}
       md={12}
-      style={{ display: "flex", textAlign: "center" , marginBottom:"30px" }}
+      style={{ display: "flex", textAlign: "center", marginBottom: "30px" }}
     >
       <Typography variant="h4" pt={5} pb={5}>
         {text}
       </Typography>
+    </Grid>
+  );
+};
+
+export const BreakLine = () => {
+  return (
+    <Grid item xs={12} sm={12} md={12}>
+      <hr style={{ margin: "20px  15px 20px 0px" }} />
     </Grid>
   );
 };
