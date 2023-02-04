@@ -2,12 +2,18 @@ import { Grid } from "@mui/material";
 import React from "react";
 
 import { PrimaryButton, SecondaryButton } from "../Components/CustomButton";
-import { FullGridElement, FullTypographyGrid, PrimaryTextField, PrimaryTypographyGrid, TitleTypography,} from "../Components/CustomGrid";
-
+import {
+  FullGridElement,
+  FullTypographyGrid,
+  PrimaryTextField,
+  PrimaryTypographyGrid,
+  TitleTypography,
+  BreakLine,
+} from "../Components/CustomGrid";
 
 export default function MultipleInvoice() {
   const originalPrint = window.print;
-  window.print = function() {
+  window.print = function () {
     document.getElementById("Buttons").style.display = "none";
     originalPrint();
     document.getElementById("Buttons").style.display = "block";
@@ -19,7 +25,6 @@ export default function MultipleInvoice() {
         <TitleTypography text="TACK FÖR DIN REGISTERING! " />
 
         <FullTypographyGrid text="Kvitto" />
-
 
         <PrimaryTypographyGrid text="Anläggningsadress" />
         <PrimaryTextField text={"facilityAddress"} />
@@ -41,9 +46,8 @@ export default function MultipleInvoice() {
 
         <PrimaryTypographyGrid text="Registreringsdatum" />
         <PrimaryTextField text={"registerDate"} />
-        <Grid item xs={12} sm={12} md={12}>
-          <hr style={{ margin: "20px  15px 20px 0px" }} />
-        </Grid>
+
+        <BreakLine />
 
         <PrimaryTypographyGrid text="Anläggningsadress" />
         <PrimaryTextField text="abc" />
@@ -67,15 +71,19 @@ export default function MultipleInvoice() {
         <PrimaryTextField text="abc" />
       </Grid>
 
-      <div style={{margin:"5vh 0 "}}  id="Buttons">
+      <div style={{ margin: "5vh 0 " }} id="Buttons">
         <FullGridElement item>
           <PrimaryButton fullWidth type="submit">
             REGISTER
           </PrimaryButton>
         </FullGridElement>
-        <br/>
+        <br />
         <FullGridElement item>
-          <SecondaryButton variant="outlined" fullWidth onClick={() => window.print()}>
+          <SecondaryButton
+            variant="outlined"
+            fullWidth
+            onClick={() => window.print()}
+          >
             SKRIVA UT
           </SecondaryButton>
         </FullGridElement>
